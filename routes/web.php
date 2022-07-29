@@ -31,7 +31,9 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware'=>['auth']], function() {
-    Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+    //I create DashboardController to redirect After Login to the proper Dashboard
+    //actually I can also do it in HomeController but this is clearer for name sake
+    Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home'); 
 });
 
 // Route::middleware(['auth','HasPermission'])->group(function () {
