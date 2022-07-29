@@ -35,9 +35,3 @@ Route::group(['middleware'=>['auth']], function() {
     //actually I can also do it in HomeController but this is clearer for name sake
     Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home'); 
 });
-
-// Route::middleware(['auth','HasPermission'])->group(function () {
-//     Route::get('/create',[CheckController::class, 'create']);
-//     Route::get('/',[CheckController::class, 'index']);
-//     Route::get('/home', [HomeController::class, 'index'])->name('home');
-// });
